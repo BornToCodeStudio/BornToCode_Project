@@ -23,5 +23,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-Console.WriteLine(app.Environment.WebRootPath);
