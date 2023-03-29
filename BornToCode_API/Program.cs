@@ -24,7 +24,6 @@ app.UseCors(config => config
     .AllowAnyMethod());
 app.UseRouting();
 app.UseAuthorization();
-app.UseEndpoints(endpoints => { endpoints.MapDefaultControllerRoute(); });
 app.UseHttpsRedirection();
 app.MapControllers();
 
