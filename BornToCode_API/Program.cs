@@ -19,12 +19,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(config => config
-    .AllowAnyOrigin()
+    .WithOrigins("http://localhost:*")
     .AllowAnyHeader()
     .AllowAnyMethod());
+
 app.UseRouting();
 app.UseAuthorization();
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); //  Disable if frontend have CORS issues
 app.MapControllers();
 
 app.UseSpaStaticFiles();
