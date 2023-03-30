@@ -19,7 +19,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(config => config
-    .WithOrigins("http://localhost:*")
+    .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod());
 
