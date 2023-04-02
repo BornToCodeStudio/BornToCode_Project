@@ -1,5 +1,10 @@
+let url = import.meta.env;
+url = window.location.origin;
+console.log(import.meta.url);
+console.log(url);
+
 export async function fetchWeatherFromServer() {
-    const response = await fetch('http://localhost:8000/WeatherForecast');
+    const response = await fetch(`${url}/WeatherForecast`);
     const data = await response.json();
 
     var target = document.getElementById("result");

@@ -20,10 +20,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(config => config
-    .WithOrigins("http://localhost:*")
-    .AllowAnyHeader()
-    .AllowAnyMethod());
+app.UseCors(config =>
+{
+    if (app.Environment.IsDevelopment())
+        config
+            .WithOrigins("http://localhost:8000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    else
+        config
+            .WithOrigins("https://borntocode-api.onrender.com")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+});
 
 app.UseRouting();
 app.UseAuthorization();
