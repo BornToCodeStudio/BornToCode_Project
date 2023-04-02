@@ -1,5 +1,5 @@
 export async function fetchWeatherFromServer() {
-    const response = await fetch('https://borntocode-api.onrender.com/WeatherForecast');
+    const response = await fetch('http://localhost:8000/WeatherForecast');
     const data = await response.json();
 
     var target = document.getElementById("result");
