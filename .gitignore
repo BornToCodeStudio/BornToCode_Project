@@ -1,5 +1,7 @@
 # Manual added files and directories
 ./BornToCode_Frontend/dist
+.idea/*
+*/.idea/
 
 
 
