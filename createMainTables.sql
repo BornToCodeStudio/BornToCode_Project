@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS users
 (
-    id            SERIAL PRIMARY KEY,
+    id            INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     username      VARCHAR(31) UNIQUE  NOT NULL,
     email         VARCHAR(255) UNIQUE NOT NULL,
     password_hash VARCHAR(255)        NOT NULL,
@@ -12,13 +12,13 @@ CREATE TABLE IF NOT EXISTS users
 
 CREATE TABLE IF NOT EXISTS profiles
 (
-    id          INT PRIMARY KEY REFERENCES users (id),
+    id          INTEGER PRIMARY KEY REFERENCES users (id),
     description TEXT
 );
 
 CREATE TABLE IF NOT EXISTS tasks
 (
-    id                SERIAL PRIMARY KEY,
+    id                INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title             VARCHAR(63)  NOT NULL,
     author_id         INT          NOT NULL REFERENCES users (id),
     short_description VARCHAR(255) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS tasks
 
 CREATE TABLE IF NOT EXISTS solutions
 (
-    id                  SERIAL PRIMARY KEY,
+    id                  INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     task_id             INT       NOT NULL REFERENCES tasks (id),
     author_id           INT       NOT NULL REFERENCES users (id),
     created_at          TIMESTAMP NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS solutions
 
 CREATE TABLE IF NOT EXISTS task_comments
 (
-    id           SERIAL PRIMARY KEY,
+    id           INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id    INT NOT NULL REFERENCES users (id),
     task_id      INT NOT NULL REFERENCES tasks (id),
     comment_text VARCHAR(4095)
@@ -51,14 +51,14 @@ CREATE TABLE IF NOT EXISTS task_comments
 
 CREATE TABLE IF NOT EXISTS task_likes
 (
-    id        SERIAL PRIMARY KEY,
+    id        INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id INT NOT NULL REFERENCES users (id),
     task_id   INT NOT NULL REFERENCES tasks (id)
 );
 
 CREATE TABLE IF NOT EXISTS solution_comments
 (
-    id           SERIAL PRIMARY KEY,
+    id           INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id    INT NOT NULL REFERENCES users (id),
     solution_id  INT NOT NULL REFERENCES solutions (id),
     comment_text VARCHAR(4095)
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS solution_comments
 
 CREATE TABLE IF NOT EXISTS solution_likes
 (
-    id          SERIAL PRIMARY KEY,
+    id          INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id   INT NOT NULL REFERENCES users (id),
     solution_id INT NOT NULL REFERENCES solutions (id)
 );
