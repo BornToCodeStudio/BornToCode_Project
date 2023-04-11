@@ -21,4 +21,9 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DataContext.Postgresql\DataContext.Postgresql.csproj" />
+      <ProjectReference Include="..\EntityModels.Postgresql\EntityModels.Postgresql.csproj" />
+    </ItemGroup>
+
 </Project>

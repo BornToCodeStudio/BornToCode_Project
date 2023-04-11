@@ -1,6 +1,9 @@
+using DataContext.Postgresql;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<BornToCodeContext>();
 
 builder.Services.AddCors();
 builder.Services.AddControllers().AddNewtonsoftJson();
