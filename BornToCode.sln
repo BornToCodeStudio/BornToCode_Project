@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BornToCode_API", "BornToCode_API\BornToCode_API.csproj", "{24788090-B144-4908-9AF4-C616BCCC8691}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BornToCodeWebApp", "BornToCodeWebApp\BornToCodeWebApp.csproj", "{24788090-B144-4908-9AF4-C616BCCC8691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

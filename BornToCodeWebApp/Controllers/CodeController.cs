@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace BornToCode_API.Controllers;
+namespace BornToCodeWebApp.Controllers;
 
 [ApiController]
 [Route("[controller]/[action]")]
