@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS profiles
     description TEXT
 );
 
-CREATE TABLE IF NOT EXISTS tasks
+CREATE TABLE IF NOT EXISTS exercises
 (
     id                INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title             VARCHAR(63)  NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS tasks
 CREATE TABLE IF NOT EXISTS solutions
 (
     id                  INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    task_id             INT       NOT NULL REFERENCES tasks (id),
+    exercise_id             INT       NOT NULL REFERENCES exercises (id),
     author_id           INT       NOT NULL REFERENCES users (id),
     created_at          TIMESTAMP NOT NULL,
     is_current          BOOLEAN   NOT NULL,
@@ -41,19 +41,19 @@ CREATE TABLE IF NOT EXISTS solutions
     js                  TEXT
 );
 
-CREATE TABLE IF NOT EXISTS task_comments
+CREATE TABLE IF NOT EXISTS exercise_comments
 (
     id           INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id    INT NOT NULL REFERENCES users (id),
-    task_id      INT NOT NULL REFERENCES tasks (id),
+    exercise_id      INT NOT NULL REFERENCES exercises (id),
     comment_text VARCHAR(4095)
 );
 
-CREATE TABLE IF NOT EXISTS task_likes
+CREATE TABLE IF NOT EXISTS exercise_likes
 (
     id        INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     author_id INT NOT NULL REFERENCES users (id),
-    task_id   INT NOT NULL REFERENCES tasks (id)
+    exercise_id   INT NOT NULL REFERENCES exercises (id)
 );
 
 CREATE TABLE IF NOT EXISTS solution_comments
