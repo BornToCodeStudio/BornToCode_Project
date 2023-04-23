@@ -12,6 +12,8 @@ public partial class ExerciseComment
     public int ExerciseId { get; set; }
 
     public string? CommentText { get; set; }
+    
+    public DateTime CreatedAt { get; set; }
 
     public virtual User Author { get; set; } = null!;
 

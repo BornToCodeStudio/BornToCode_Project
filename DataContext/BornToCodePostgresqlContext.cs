@@ -60,7 +60,7 @@ public partial class BornToCodePostgresqlContext : DbContext
                 .HasColumnName("id");
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
             entity.Property(e => e.CreatedAt)
-                .HasColumnType("timestamp without time zone")
+                .HasColumnType("timestamp with time zone")
                 .HasColumnName("created_at");
             entity.Property(e => e.Css).HasColumnName("css");
             entity.Property(e => e.FromSolution).HasColumnName("from_solution");
@@ -96,6 +96,9 @@ public partial class BornToCodePostgresqlContext : DbContext
             entity.Property(e => e.CommentText)
                 .HasMaxLength(4095)
                 .HasColumnName("comment_text");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("timestamp with time zone")
+                .HasColumnName("created_at");
             entity.Property(e => e.SolutionId).HasColumnName("solution_id");
 
             entity.HasOne(d => d.Author).WithMany(p => p.SolutionComments)
@@ -118,6 +121,9 @@ public partial class BornToCodePostgresqlContext : DbContext
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("timestamp with time zone")
+                .HasColumnName("created_at");
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
             entity.Property(e => e.SolutionId).HasColumnName("solution_id");
 
@@ -144,7 +150,7 @@ public partial class BornToCodePostgresqlContext : DbContext
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
             entity.Property(e => e.CodeExample).HasColumnName("code_example");
             entity.Property(e => e.CreatedAt)
-                .HasColumnType("timestamp without time zone")
+                .HasColumnType("timestamp with time zone")
                 .HasColumnName("created_at");
             entity.Property(e => e.FullDescription).HasColumnName("full_description");
             entity.Property(e => e.ShortDescription)
@@ -173,6 +179,9 @@ public partial class BornToCodePostgresqlContext : DbContext
             entity.Property(e => e.CommentText)
                 .HasMaxLength(4095)
                 .HasColumnName("comment_text");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("timestamp with time zone")
+                .HasColumnName("created_at");
             entity.Property(e => e.ExerciseId).HasColumnName("exercise_id");
 
             entity.HasOne(d => d.Author).WithMany(p => p.ExerciseComments)
@@ -197,6 +206,9 @@ public partial class BornToCodePostgresqlContext : DbContext
                 .HasColumnName("id");
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
             entity.Property(e => e.ExerciseId).HasColumnName("exercise_id");
+            entity.Property(e => e.CreatedAt)
+                .HasColumnType("timestamp with time zone")
+                .HasColumnName("created_at");
 
             entity.HasOne(d => d.Author).WithMany(p => p.ExerciseLikes)
                 .HasForeignKey(d => d.AuthorId)
@@ -226,13 +238,13 @@ public partial class BornToCodePostgresqlContext : DbContext
                 .HasMaxLength(1000)
                 .HasColumnName("avatar");
             entity.Property(e => e.CreatedAt)
-                .HasColumnType("timestamp without time zone")
+                .HasColumnType("timestamp with time zone")
                 .HasColumnName("created_at");
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
                 .HasColumnName("email");
             entity.Property(e => e.LastLoginAt)
-                .HasColumnType("timestamp without time zone")
+                .HasColumnType("timestamp with time zone")
                 .HasColumnName("last_login_at");
             entity.Property(e => e.PasswordHash)
                 .HasMaxLength(255)

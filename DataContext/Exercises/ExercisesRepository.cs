@@ -28,6 +28,7 @@ public class ExercisesRepository : IExercisesRepository
         {
             Title = newExercise.Title,
             AuthorId = newExercise.AuthorId,
+            CreatedAt = newExercise.CreatedAt,
             ShortDescription = newExercise.ShortDescription,
             FullDescription = newExercise.FullDescription,
             CodeExample = newExercise.CodeExample,
