@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["EntityModels.Postgresql/EntityModels.Postgresql.csproj", "EntityModels.Postgresql/"]
-COPY ["DataContext.Postgresql/DataContext.Postgresql.csproj", "DataContext.Postgresql/"]
+COPY ["DataContext/DataContext.csproj", "DataContext/"]
 COPY ["BornToCodeWebApp/BornToCodeWebApp.csproj", "BornToCodeWebApp/"]
 RUN dotnet restore "BornToCodeWebApp/BornToCodeWebApp.csproj"
 COPY . .
