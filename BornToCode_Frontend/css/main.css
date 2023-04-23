@@ -1,0 +1,158 @@
+.nav_bar{
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content:space-between;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+}
+
+.right__head{
+	display: flex;
+	gap: 10px;
+	flex-direction: row;
+	
+}
+
+.log__sign{
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+hr{
+	background-color: #A0C6F8;
+	height: 0.4px;
+}
+
+#home{
+	border-radius: 30px;
+	border-width: 0px;
+	width: 200px;
+	height: 50px;
+}
+
+#tasks{
+	border-radius: 30px;
+	border-width: 0px;
+	width: 200px;
+	height: 50px;
+}
+
+#sign_in{
+	border-radius: 15px;
+	border-width: 0px;
+	width: 70px;
+	background-color: #A0C6F8;
+}
+
+#log_in{
+	border-radius: 15px;
+	border-width: 0px;
+	width: 70px;
+	background-color: #A0C6F8;
+}
+
+#profile{
+	border-radius: 15px;
+	border-width: 0px;
+	height: 50px;
+	width: 50px;
+}
+
+#notifications{
+	border-radius: 10px;
+	border-width: 0px;
+	height: 50px;
+	width: 30px;
+	background-color: #99B0ED;
+}
+
+/* .nav_bar{
+	top: -8px;
+	position: absolute;
+	right: 0px;
+	height: 70px;
+	width: 1518px;
+	background-color: #e1e9ff;
+}
+
+.left__head {
+	position: absolute;
+	left: 100px;
+	height: auto;
+}
+
+.right__head {
+	position: absolute;
+	right: 0px;
+	height: 70px;
+	width: left;
+}
+
+#home {
+	position: relative;
+	background-color: #EFEFEF;
+	top: 15px;
+	left: 70px;
+	border-radius: 15px;
+	border-width: 0px;
+	transform: scale(2,2);
+	width: 130px;
+	height: 25px;
+}
+
+#logo {
+	position: relative;
+	background-color: #EFEFEF;
+	border-radius: 10px;
+	border-width: 0px;	
+	width: 50px;
+	height: 50px;
+	right: 200px;
+	top: 10px;
+}
+
+#sign_in, #log_in {
+	position: relative;
+	top: 12px;
+	margin-bottom: 10px;
+	background-color: #A0C6F8;
+	border-radius: 10px;
+	border-width: 0px;
+	transform: scale(1.1,1.1);
+	width: 90px;
+	right: 150px;
+	display:block;
+}
+
+#profile {
+	position: relative;
+	top: -46px;
+	right: 30px;
+	height: 50px;
+	width: 50px;
+	background-color: #EFEFEF;
+	border-radius: 10px;
+	border-width: 0px;
+}
+
+#notifications {
+	position: relative;
+	top: -51px;
+	height: 50px;
+	width: 30px;
+	right: 20px;
+	background-color: #9EB4EE;
+	border-radius: 12px;
+	border-width: 0px;
+  align-items:baseline;
+
+}
+ */
