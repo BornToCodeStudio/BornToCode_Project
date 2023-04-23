@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BornToCode_API", "BornToCode_API\BornToCode_API.csproj", "{24788090-B144-4908-9AF4-C616BCCC8691}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BornToCodeWebApp", "BornToCodeWebApp\BornToCodeWebApp.csproj", "{24788090-B144-4908-9AF4-C616BCCC8691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityModels.Postgresql", "EntityModels.Postgresql\EntityModels.Postgresql.csproj", "{9FEE9EB4-B788-407D-A377-3857460001F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext.Postgresql", "DataContext.Postgresql\DataContext.Postgresql.csproj", "{D5E989EA-48C5-4217-A472-184992122AE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{24788090-B144-4908-9AF4-C616BCCC8691}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24788090-B144-4908-9AF4-C616BCCC8691}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24788090-B144-4908-9AF4-C616BCCC8691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEE9EB4-B788-407D-A377-3857460001F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEE9EB4-B788-407D-A377-3857460001F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEE9EB4-B788-407D-A377-3857460001F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEE9EB4-B788-407D-A377-3857460001F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E989EA-48C5-4217-A472-184992122AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E989EA-48C5-4217-A472-184992122AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E989EA-48C5-4217-A472-184992122AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E989EA-48C5-4217-A472-184992122AE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

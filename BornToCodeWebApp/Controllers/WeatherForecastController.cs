@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace BornToCode_API.Controllers;
+namespace BornToCodeWebApp.Controllers;
 
 [ApiController]
 [Route("[controller]")]

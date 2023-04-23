@@ -1,4 +1,4 @@
-namespace BornToCode_API;
+namespace BornToCodeWebApp;
 
 public class WeatherForecast
 {
