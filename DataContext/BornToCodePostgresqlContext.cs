@@ -1,14 +1,13 @@
 ﻿using EntityModels.Postgresql;
 using Microsoft.EntityFrameworkCore;
-using Task = EntityModels.Postgresql.Task;
 
-namespace DataContext.Postgresql;
+namespace DataContext;
 
-public partial class BornToCodeContext : DbContext
+public partial class BornToCodePostgresqlContext : DbContext
 {
-    public BornToCodeContext() { }
+    public BornToCodePostgresqlContext() { }
 
-    public BornToCodeContext(DbContextOptions<BornToCodeContext> options)
+    public BornToCodePostgresqlContext(DbContextOptions<BornToCodePostgresqlContext> options)
         : base(options) { }
 
     public virtual DbSet<Profile> Profiles { get; set; }
@@ -19,11 +18,11 @@ public partial class BornToCodeContext : DbContext
 
     public virtual DbSet<SolutionLike> SolutionLikes { get; set; }
 
-    public virtual DbSet<Task> Tasks { get; set; }
+    public virtual DbSet<Exercise> Exercises { get; set; }
 
-    public virtual DbSet<TaskComment> TaskComments { get; set; }
+    public virtual DbSet<ExerciseComment> ExerciseComments { get; set; }
 
-    public virtual DbSet<TaskLike> TaskLikes { get; set; }
+    public virtual DbSet<ExerciseLike> ExerciseLikes { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -68,7 +67,7 @@ public partial class BornToCodeContext : DbContext
             entity.Property(e => e.Html).HasColumnName("html");
             entity.Property(e => e.IsCurrent).HasColumnName("is_current");
             entity.Property(e => e.Js).HasColumnName("js");
-            entity.Property(e => e.TaskId).HasColumnName("task_id");
+            entity.Property(e => e.ExerciseId).HasColumnName("exercise_id");
             entity.Property(e => e.VersionDescription)
                 .HasMaxLength(255)
                 .HasColumnName("version_description");
@@ -78,10 +77,10 @@ public partial class BornToCodeContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("solutions_author_id_fkey");
 
-            entity.HasOne(d => d.Task).WithMany(p => p.Solutions)
-                .HasForeignKey(d => d.TaskId)
+            entity.HasOne(d => d.Exercise).WithMany(p => p.Solutions)
+                .HasForeignKey(d => d.ExerciseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("solutions_task_id_fkey");
+                .HasConstraintName("solutions_exercise_id_fkey");
         });
 
         modelBuilder.Entity<SolutionComment>(entity =>
@@ -133,11 +132,11 @@ public partial class BornToCodeContext : DbContext
                 .HasConstraintName("solution_likes_solution_id_fkey");
         });
 
-        modelBuilder.Entity<Task>(entity =>
+        modelBuilder.Entity<Exercise>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("tasks_pkey");
+            entity.HasKey(e => e.Id).HasName("exercises_pkey");
 
-            entity.ToTable("tasks");
+            entity.ToTable("exercises");
 
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
@@ -155,17 +154,17 @@ public partial class BornToCodeContext : DbContext
                 .HasMaxLength(63)
                 .HasColumnName("title");
 
-            entity.HasOne(d => d.Author).WithMany(p => p.Tasks)
+            entity.HasOne(d => d.Author).WithMany(p => p.Exercises)
                 .HasForeignKey(d => d.AuthorId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("tasks_author_id_fkey");
+                .HasConstraintName("exercises_author_id_fkey");
         });
 
-        modelBuilder.Entity<TaskComment>(entity =>
+        modelBuilder.Entity<ExerciseComment>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("task_comments_pkey");
+            entity.HasKey(e => e.Id).HasName("exercise_comments_pkey");
 
-            entity.ToTable("task_comments");
+            entity.ToTable("exercise_comments");
 
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
@@ -174,40 +173,40 @@ public partial class BornToCodeContext : DbContext
             entity.Property(e => e.CommentText)
                 .HasMaxLength(4095)
                 .HasColumnName("comment_text");
-            entity.Property(e => e.TaskId).HasColumnName("task_id");
+            entity.Property(e => e.ExerciseId).HasColumnName("exercise_id");
 
-            entity.HasOne(d => d.Author).WithMany(p => p.TaskComments)
+            entity.HasOne(d => d.Author).WithMany(p => p.ExerciseComments)
                 .HasForeignKey(d => d.AuthorId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("task_comments_author_id_fkey");
+                .HasConstraintName("exercise_comments_author_id_fkey");
 
-            entity.HasOne(d => d.Task).WithMany(p => p.TaskComments)
-                .HasForeignKey(d => d.TaskId)
+            entity.HasOne(d => d.Exercise).WithMany(p => p.ExerciseComments)
+                .HasForeignKey(d => d.ExerciseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("task_comments_task_id_fkey");
+                .HasConstraintName("exercise_comments_exercise_id_fkey");
         });
 
-        modelBuilder.Entity<TaskLike>(entity =>
+        modelBuilder.Entity<ExerciseLike>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("task_likes_pkey");
+            entity.HasKey(e => e.Id).HasName("exercise_likes_pkey");
 
-            entity.ToTable("task_likes");
+            entity.ToTable("exercise_likes");
 
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
             entity.Property(e => e.AuthorId).HasColumnName("author_id");
-            entity.Property(e => e.TaskId).HasColumnName("task_id");
+            entity.Property(e => e.ExerciseId).HasColumnName("exercise_id");
 
-            entity.HasOne(d => d.Author).WithMany(p => p.TaskLikes)
+            entity.HasOne(d => d.Author).WithMany(p => p.ExerciseLikes)
                 .HasForeignKey(d => d.AuthorId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("task_likes_author_id_fkey");
+                .HasConstraintName("exercise_likes_author_id_fkey");
 
-            entity.HasOne(d => d.Task).WithMany(p => p.TaskLikes)
-                .HasForeignKey(d => d.TaskId)
+            entity.HasOne(d => d.Exercise).WithMany(p => p.ExerciseLikes)
+                .HasForeignKey(d => d.ExerciseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("task_likes_task_id_fkey");
+                .HasConstraintName("exercise_likes_exercise_id_fkey");
         });
 
         modelBuilder.Entity<User>(entity =>
