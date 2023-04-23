@@ -28,8 +28,6 @@ public class SolutionsRepository : ISolutionsRepository
     public async Task<SolutionModel?> AddNewSolutionAsync(CreateSolutionModel newSolution)
     {
         //  TODO: Solution validation
-        
-
         var solution = new Solution
         {
             ExerciseId = newSolution.ExerciseId,

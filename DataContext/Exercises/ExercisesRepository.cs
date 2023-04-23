@@ -21,10 +21,9 @@ public class ExercisesRepository : IExercisesRepository
     public async Task<ExerciseModel?> FindByNameAsync(string name) =>
         (await _db.Exercises.FirstOrDefaultAsync(t => t.Title == name))?.MapToModel();
 
-    public async Task<ExerciseModel> AddNewExerciseAsync(CreateExerciseModel newExercise)
+    public async Task<ExerciseModel?> AddNewExerciseAsync(CreateExerciseModel newExercise)
     {
         //  TODO: Exercise validation
-
         var exercise = new Exercise
         {
             Title = newExercise.Title,
