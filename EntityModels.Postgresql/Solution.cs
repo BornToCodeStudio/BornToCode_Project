@@ -7,7 +7,7 @@ public partial class Solution
 {
     public int Id { get; set; }
 
-    public int TaskId { get; set; }
+    public int ExerciseId { get; set; }
 
     public int AuthorId { get; set; }
 
@@ -31,5 +31,5 @@ public partial class Solution
 
     public virtual ICollection<SolutionLike> SolutionLikes { get; set; } = new List<SolutionLike>();
 
-    public virtual Task Task { get; set; } = null!;
+    public virtual Exercise Exercise { get; set; } = null!;
 }
