@@ -3,7 +3,7 @@
     <main>    
         <div class="profile__column">
             <div class="profile__info">
-                <img :src="avatarUrl" alt="unload" class="profile__image">
+                <img :src="avatarUrl" ref='profileImg' alt="unload" class="profile__image">
 
                 <span id="profile__nickname">{{ nickname }}</span>
                 <span id="profile__aboutme">About me:</span>
@@ -42,6 +42,8 @@
 import axios from 'axios';
 import SomeTask from '../components/some-task.vue';
 import StatsItem from '../components/stats-item.vue';
+import profileImage from '../assets/default_avatar.png'
+
 
 export default{
     name: "profile-page",
@@ -56,7 +58,7 @@ export default{
             nickname: "",
             aboutme: "",
             file: "",
-            avatarUrl: '',
+            avatarUrl: '../assets/default_avatar.png',
             likes: "0",
             subscribers: "0",
             subscriptions: "0",
@@ -134,16 +136,28 @@ export default{
             });
         },
         async loadAvatar() {
-            let data = await axios({
-                method: 'get',
-                url: process.env.VUE_APP_API_URL,
-                responseType: 'json'
-            }).then((response) => {
-                if (response.status == 200)
-                    return response.data;
+            let data = null;
+            try {
+                data = await axios({
+                    method: 'get',
+                    url: process.env.VUE_APP_API_URL,
+                    responseType: 'json'
+                }).then((response) => {
+                    if (response.status == 200)
+                        return response.data;
 
-                return null;
-            });
+                    return null;
+                });
+            }
+            catch(error) {
+                this.$refs.profileImg.src = profileImage;
+            }
+
+            if (data == null) {
+                this.$refs.profileImg.src = profileImage;
+
+                return;
+            }
 
             this.avatarUrl = "data:image/jpg;base64," + data.avatar;
         },

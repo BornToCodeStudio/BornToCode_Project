@@ -25,7 +25,7 @@
     </div>
   </nav>
 
-  <hr />
+  <hr>
 </template>
 
 <script>
