@@ -10,8 +10,14 @@
 export default{
     name: "Stats-Item",
     props: {
-        text: "",
-        value: ""
+        text: {
+            type: String,
+            default: ''
+        },
+        value: {
+            type: String,
+            default: ''
+        }
     }
 }
 

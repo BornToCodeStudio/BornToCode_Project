@@ -1,17 +1,14 @@
 <template>
-  <div id="app">
-    <Home-Page/>
-  </div>
+  <nav-bar/>
+  <router-view></router-view>
 </template>
 
 <script>
-
-import HomePage from './components/Home-Page.vue';
-
+import NavBar from './components/nav-bar.vue'
 export default {
   name: 'App',
   components: {
-    HomePage
+    NavBar
   }
 }
 </script>
