@@ -1,28 +1,46 @@
 <template>
-    <div class="SignIn">
-        <head>
-        <meta charset="utf-8">
-        <title>Вход</title>
-    </head>
-    <body>
-        <form class ="sign__in" action="Home-Page.vue" method="get">
-            <h1>Регистрация</h1>
-            <input type="text" name ="userLogin" placeholder="Логин">
-            <input type="password" name ="userPassword" placeholder="Пароль">
-            <input type="password" name ="userConfirmPassword" placeholder="Подтверждение пароля">
-            <input type="submit" name = "submit" value="Зарегистрироваться">
-        </form>
-    </body>       
+    <div class="log__in">
+        <h1>Вход</h1>
+        <input type="text" ref="login" placeholder="Логин">
+        <input type="password" ref="password" placeholder="Пароль">
+        <button type="submit" @click="signIn()">Войти</button>
+        <p><a href ="">Нету аккаунта? Зарегистрируйтесь</a></p>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
     export default{
-        name: "SignIn",
+        name: "SignIn.",
         components: {
 
+        },
+        methods: {
+            async signIn() {
+                try {
+                    let dto = {
+                        login: this.$refs.login.value,
+                        password: this.$refs.password.value
+                    };
+
+                    let data = await axios({
+                        method: 'post',
+                        url: '',
+                        responseType: 'json',
+                        data: dto
+                    }).then((response) => response).catch((error) => {
+                        alert("Не удалось авторизоваться. " + error.response.data);
+                    });
+
+                    if (data.status == 200)
+                        alert("Вы успешно авторизованы")
+                    else if (data.status == 404)
+                        alert("Такого профиля не существует")
+                } catch (error) {
+                    
+                }
+            }
         }
 }
 </script>
-
-

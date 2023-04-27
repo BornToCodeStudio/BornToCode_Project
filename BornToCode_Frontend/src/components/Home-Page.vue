@@ -1,34 +1,29 @@
-<template>
-    <nav class="nav_bar">
-        <section class="left__head">
+<template>  
+    <nav class="nav__bar">
+        <div class="nav__bar-left">
             <router-link to="/Home">
-                <button id="home">Home</button>
+                <button id="home__button">Home</button>
             </router-link>
-        </section>
+        </div>
 
-        <section class="center__head">
-            <router-link to="/Tasks">
-                <button id="tasks">Tasks</button>
-            </router-link>
-        </section>
+        <div class="nav__bar-right">
 
-        <section class="right__head">
-            <section class="log__sign">
+            <div class="auth__block">
+                <router-link to="/SignUp">
+                    <button id="sign-up__button">Sign Up</button>
+                </router-link>
+
                 <router-link to="/SignIn">
-                    <button id="sign_in">Sign In</button>
+                    <button id="sign-in__button">Sign In</button>
                 </router-link>
-
-                <router-link to="/LogIn">
-                    <button id="log_in">Log In</button>
-                </router-link>
-            </section>
+            </div>
 
             <router-link to="/Profile">
-                <button id="profile">Profile</button>
+                <button id="profile__button">Profile</button>
             </router-link>
 
-            <button id="notifications"></button>
-        </section>
+            <button id="notifications__button"></button>
+        </div>
     </nav>
 
     <hr>
@@ -37,18 +32,16 @@
 </template>
 
 <script>
-import LogIn from './LogIn.vue';
 import SignIn from './SignIn.vue';
+import SignUp from './SignUp.vue';
 import Profile from './Profile.vue'
-import Tasks from './Tasks.vue'
 
-export default {
-    name: "Home-Page",
-    components: {
-        LogIn,
-        SignIn,
-        Profile,
-        Tasks
-    }
+    export default{
+        name: "Home-Page",
+        components: {
+            SignIn,
+            SignUp,
+            Profile
+        }
 }
 </script>
