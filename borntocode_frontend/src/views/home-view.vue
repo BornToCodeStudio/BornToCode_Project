@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="filtered__tasks">
-          <img :src="getPreview()" ref='taskImg' alt="unload" class="task__preview">
+           <HomeTask v-bind:key="index" v-for="(task, index) in tasks" :task="task"/>
         </div>
       </div>
     </main>
@@ -28,29 +28,19 @@
 
 <script>
 
-//import FilteredTask from../components/home-tasks.vue";
 import axios from 'axios';
 import previewImageDefault from '../assets/default_preview_solution.png';
+import HomeTask from '../components/home-task.vue';
 
 export default {
   name: "home-view",
   components: {
-    //FilteredTask
+    HomeTask
 },
     data() {
         return {
-          title: '',
-          author: '',
-          shortdescription: '',
-          fulldescription: '',
-          createdat: null,
-          codeexample: '',
-          solutions: null,
-          taskcomments: '',
-          tasklikes: null,
-          id: null,
-          previewimage: "",
-          tasks: []
+          tasks: [{author: "author1", isTried: false, name: "работа с JSON", description: "aboba", previewimage: previewImageDefault},
+          {author: "author2", isTried: true, name: "работа с JSON1", description: "abob1a", previewimage: previewImageDefault}]
         }
     },
     methods: {
@@ -116,50 +106,59 @@ export default {
         background-color: #9EB4EE;
       }
     }
-    
-    .filters {
-      display: flex;
-      flex-direction: row;
-      height: 30px;
-      justify-content: space-evenly;
 
-      .left__filters {
-        display:flex;
+    .main__body{
+      .filtered__tasks{
+        margin: 40px;
+        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        background-color: #EFEFEF;
-        border-radius: 15px;
-        width: 20%;
-
-
-        #filter__new , #filter__solutions, #filter__likes{
-          background-color: #A0C6F8;
-          border-width: 0px;
-          border-radius: 15px;
-          width: 27%;
-        }
       }
 
-      #tasks {
-        text-align: center;
-        background-color: #9AA5AC;
-        color: white;
-        border-radius: 15px;
-        width:10%;        } 
-
-      .right__filters {
-        display:flex;
+      .filters {
+        display: flex;
         flex-direction: row;
+        height: 30px;
         justify-content: space-evenly;
-        background-color: #EFEFEF;
-        border-radius: 15px;
-        width: 20%;
 
-        #filter__html , #filter__css, #filter__js{
-          background-color: #A0C6F8;
-          border-width: 0px;
+        .left__filters {
+          display:flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          background-color: #EFEFEF;
           border-radius: 15px;
-          width: 27%;
+          width: 20%;
+
+
+          #filter__new , #filter__solutions, #filter__likes{
+            background-color: #A0C6F8;
+            border-width: 0px;
+            border-radius: 15px;
+            width: 27%;
+          }
+        }
+
+        #tasks {
+          text-align: center;
+          background-color: #9AA5AC;
+          color: white;
+          border-radius: 15px;
+          width:10%;        } 
+
+        .right__filters {
+          display:flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          background-color: #EFEFEF;
+          border-radius: 15px;
+          width: 20%;
+
+          #filter__html , #filter__css, #filter__js{
+            background-color: #A0C6F8;
+            border-width: 0px;
+            border-radius: 15px;
+            width: 27%;
+          }
         }
       }
     }
