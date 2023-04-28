@@ -64,7 +64,7 @@ export default {
 
     hr {
         background-color: #A0C6F8;
-        height: 0.4px;
+        height: 1px;
     }
 
     #home__button {
