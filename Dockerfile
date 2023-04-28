@@ -19,7 +19,7 @@ RUN dotnet publish "BornToCodeWebApp.csproj" -c Release -o /app/publish
 # Build js app
 FROM node AS node-builder
 WORKDIR /node
-COPY ./BornToCode_Frontend /node
+COPY ./borntocode_frontend /node
 RUN npm install
 RUN npm run build
 
