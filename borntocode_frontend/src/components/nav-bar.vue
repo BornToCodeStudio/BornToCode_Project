@@ -36,8 +36,6 @@ export default {
 
 <style lang="scss" scoped>
     .nav__bar {
-        user-select: none;
-        pointer-events: none;
         display: flex;
         flex-direction: row;
         gap: 20px;
