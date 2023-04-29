@@ -22,6 +22,9 @@
         <div class="filtered__tasks">
            <HomeTask v-bind:key="index" v-for="(task, index) in tasks" :task="task"/>
         </div>
+        <div class="pages">
+          <ItemSwitcher/>
+        </div>
       </div>
     </main>
 </template>
@@ -31,16 +34,19 @@
 import axios from 'axios';
 import previewImageDefault from '../assets/default_preview_solution.png';
 import HomeTask from '../components/home-task.vue';
+import ItemSwitcher from '../components/item-switcher.vue'
 
 export default {
   name: "home-view",
   components: {
-    HomeTask
+    HomeTask,
+    ItemSwitcher
 },
     data() {
         return {
           tasks: [{author: "author1", isTried: false, name: "работа с JSON", description: "aboba", previewimage: previewImageDefault},
-          {author: "author2", isTried: true, name: "работа с JSON1", description: "abob1a", previewimage: previewImageDefault}]
+          {author: "author2", isTried: true, name: "работа с JSON1", description: "abob1a", previewimage: previewImageDefault}],
+          switcher: []
         }
     },
     methods: {
@@ -108,6 +114,11 @@ export default {
     }
 
     .main__body{
+      .pages {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
       .filtered__tasks{
         margin: 40px;
         display: flex;
