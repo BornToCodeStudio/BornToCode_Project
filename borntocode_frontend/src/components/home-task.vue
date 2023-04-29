@@ -34,6 +34,7 @@ export default{
         border-radius: 15px;
         width: 40%;
         gap: 10px;
+        user-select: none;
 
         .left__part {
             margin: 10px;
@@ -43,9 +44,10 @@ export default{
             gap: 10px;
 
             .image__preview {
-            width: 186px;
-            height: 186px;
-            border-radius: 15px;
+                width: 186px;
+                height: 186px;
+                border-radius: 15px;
+                pointer-events: none;
             }
 
             .author {
@@ -53,6 +55,7 @@ export default{
                 background-color: #8D939F;
                 border-radius: 15px;
                 height: 46px;
+                
             }
 
             .is__tried {

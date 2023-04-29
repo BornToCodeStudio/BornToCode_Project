@@ -20,10 +20,10 @@
           </div>
         </div>
         <div class="filtered__tasks">
-           <HomeTask v-bind:key="index" v-for="(task, index) in tasks" :task="task"/>
+           <HomeTask v-bind:key="index" v-for="(task, index) in getTasks()" :task="task"/>
         </div>
         <div class="pages">
-          <ItemSwitcher/>
+          <ItemSwitcher :pagesCount="calculatePages(tasks.length)"/>
         </div>
       </div>
     </main>
@@ -45,11 +45,28 @@ export default {
     data() {
         return {
           tasks: [{author: "author1", isTried: false, name: "работа с JSON", description: "aboba", previewimage: previewImageDefault},
+          {author: "author2", isTried: true, name: "работа с JSON1", description: "abob1a", previewimage: previewImageDefault},
           {author: "author2", isTried: true, name: "работа с JSON1", description: "abob1a", previewimage: previewImageDefault}],
-          switcher: []
         }
     },
-    methods: {
+    methods: { 
+        getTasks() {
+            let i = 0;
+            let maxI = this.tasks.length >= 2 ? 2 : this.tasks.length;
+            let arr = [];
+            this.tasks.forEach(function(item) {
+                if (i == maxI)
+                  return arr;
+                else
+                  i++;
+                arr.push(item);
+            });
+
+            return arr;
+        },        
+        calculatePages(length) {
+            return length != 0 ? Math.ceil(length / 2) : 0;
+        },
         async loadTasks() {
             let data = await axios({
                 method: 'get',
@@ -81,6 +98,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
+    user-select: none;
 
     hr {
         background-color: #A0C6F8;
