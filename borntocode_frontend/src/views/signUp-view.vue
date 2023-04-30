@@ -67,25 +67,7 @@ export default{
     gap: 2px;
 }
 
-.Login {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    border: 2px solid black;
-    text-align: center;
-    height: 20px;
-}
-
-.Password {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    border: 2px solid black;
-    text-align: center;
-    height: 20px;
-}
-
-.Confirmpassword {
+.Login, .Password, .Confirmpassword{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -103,6 +85,7 @@ export default{
     width: auto;
     text-align: center;
     padding-top: 3px;
+    transition: 0.5s;
 }
 
 </style>

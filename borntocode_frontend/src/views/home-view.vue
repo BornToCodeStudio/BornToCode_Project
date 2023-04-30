@@ -167,7 +167,8 @@ export default {
             background-color: #A0C6F8;
             border-width: 0px;
             border-radius: 15px;
-            width: 27%;
+            width: 26%;
+            transition: 0.5s;
           }
 
           #filter__new:hover, #filter__solutions:hover, #filter__likes:hover{
@@ -200,7 +201,8 @@ export default {
             background-color: #A0C6F8;
             border-width: 0px;
             border-radius: 15px;
-            width: 27%;
+            width: 26%;
+            transition: 0.5s;
           }
           #filter__html:hover , #filter__css:hover, #filter__js:hover{
             background-color: #567ff0;

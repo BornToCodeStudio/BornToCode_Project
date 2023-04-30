@@ -55,16 +55,7 @@ export default{
     gap: 2px;
 }
 
-.Login{
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    border: 2px solid black;
-    height: 20px;
-    text-align: center;
-}
-
-.Password{
+.Login, .Password{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -82,6 +73,7 @@ export default{
     width: 60px;
     height: 28px;
     padding: 4px;
+    transition: 0.5s;
 }
 
 .href{

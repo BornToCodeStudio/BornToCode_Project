@@ -42,7 +42,6 @@ export default {
         justify-content:space-between;
         padding-left: 15px;
         padding-right: 15px;
-        padding-top: 10px;
 
         .nav__bar-right {
             display: flex;
@@ -72,6 +71,7 @@ export default {
         border-width: 0px;
         width: 200px;
         height: 50px;
+        transition: 0.5s;
     }
 
     #sign-up__button {
@@ -80,6 +80,7 @@ export default {
         width: 70px;
         background-color: #A0C6F8;
         text-align: center;
+        transition: 0.5s;
     }
 
     #sign-in__button {
@@ -88,6 +89,7 @@ export default {
         width: 70px;
         background-color: #A0C6F8;
         text-align: center;
+        transition: 0.5s;
     }
 
     #sign-up__button:hover, #sign-in__button:hover, #notifications__button:hover{
@@ -99,6 +101,7 @@ export default {
         border-width: 0px;
         height: 50px;
         width: 50px;
+        transition: 0.5s;
     }
 
     #notifications__button {
@@ -107,5 +110,6 @@ export default {
         height: 50px;
         width: 30px;
         background-color: #A0C6F8;
+        transition: 0.5s;
     }
 </style>

@@ -13,7 +13,7 @@
                 <button id="subscribe__button">Subscribe</button>
 
                 <input type="file" ref="file" @change="selectFile()">
-                <button @click="sendFile()">Отправить фото</button>
+                <button class="Send__photo" @click="sendFile()">Отправить фото</button>
             </div>
             <div id="profile__stats">
                 <StatsItem text="Likes" :value="likes"/>
@@ -238,6 +238,11 @@ export default{
         background-color: #99B0ED;
         border-radius: 20px;
         border-width: 0px;
+        transition: 0.5s;
+    }
+
+    #subscribe__button:hover{
+        background-color: #1477F8;;
     }
 
     #profile__stats {
@@ -318,4 +323,19 @@ export default{
         gap: 30px;
         flex-wrap: wrap;
     }
+
+    .Send__photo{
+        display: flex;
+        flex-direction: column;
+        border: 2px solid black;
+        border-style: ridge;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    #completed-tasks__button:hover, #created-tasks__button:hover{
+        background-color: #1477F8;
+    }
+
 </style>
