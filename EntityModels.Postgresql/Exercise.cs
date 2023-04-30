@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EntityModels.Postgresql;
 
-public partial class Task
+public partial class Exercise
 {
     public int Id { get; set; }
 
@@ -23,7 +23,7 @@ public partial class Task
 
     public virtual ICollection<Solution> Solutions { get; set; } = new List<Solution>();
 
-    public virtual ICollection<TaskComment> TaskComments { get; set; } = new List<TaskComment>();
+    public virtual ICollection<ExerciseComment> ExerciseComments { get; set; } = new List<ExerciseComment>();
 
-    public virtual ICollection<TaskLike> TaskLikes { get; set; } = new List<TaskLike>();
+    public virtual ICollection<ExerciseLike> ExerciseLikes { get; set; } = new List<ExerciseLike>();
 }
