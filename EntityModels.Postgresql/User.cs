@@ -29,9 +29,9 @@ public partial class User
 
     public virtual ICollection<Solution> Solutions { get; set; } = new List<Solution>();
 
-    public virtual ICollection<TaskComment> TaskComments { get; set; } = new List<TaskComment>();
+    public virtual ICollection<ExerciseComment> ExerciseComments { get; set; } = new List<ExerciseComment>();
 
-    public virtual ICollection<TaskLike> TaskLikes { get; set; } = new List<TaskLike>();
+    public virtual ICollection<ExerciseLike> ExerciseLikes { get; set; } = new List<ExerciseLike>();
 
-    public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
+    public virtual ICollection<Exercise> Exercises { get; set; } = new List<Exercise>();
 }

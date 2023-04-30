@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 namespace BornToCodeWebApp.Controllers;
 
 [ApiController]
-[Route("[controller]/[action]")]
+[Route("/api/[controller]")]
 public class CodeController : ControllerBase
 {
     private static string LastCodeFromUser =
@@ -49,9 +49,9 @@ public class CodeController : ControllerBase
 
     public CodeController(ILogger<CodeController> logger) => _logger = logger;
 
-    [HttpGet(Name = "Get")]
+    [HttpGet]
     public JsonResult Get() => new(LastCodeFromUser);
 
-    [HttpPost(Name = "Post")]
+    [HttpPost]
     public void Post([FromBody] JObject html) => LastCodeFromUser = html["html"]?.ToString() ?? "string.Empty";
 }

@@ -42,7 +42,7 @@
 import axios from 'axios';
 import SomeTask from '../components/some-task.vue';
 import StatsItem from '../components/stats-item.vue';
-import profileImage from '../assets/default_avatar.png'
+import profileImage from '../assets/default_avatar.png';
 
 
 export default{

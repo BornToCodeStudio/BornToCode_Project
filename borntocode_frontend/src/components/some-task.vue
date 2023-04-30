@@ -3,11 +3,31 @@
 </template>
 
 <script>   
-    
+import previewImageDefault from '../assets/default_preview_solution.png';
+
 export default{
     name: "Some-Task",
     props: {
-        taskname: String
+        preview: {
+            type: Object,
+            default: previewImageDefault
+        },
+        author: {
+            type: String,
+            default: ''
+        },
+        completed: {
+            type: Boolean,
+            default: false
+        },
+        description: {
+            type: String,
+            default: ''
+        },
+        taskname: {
+            type: String,
+            default: ''
+        }
     }
 }
 

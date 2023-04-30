@@ -13,6 +13,7 @@
         <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.4" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -22,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DataContext.Postgresql\DataContext.Postgresql.csproj" />
+      <ProjectReference Include="..\DataContext\DataContext.csproj" />
       <ProjectReference Include="..\EntityModels.Postgresql\EntityModels.Postgresql.csproj" />
     </ItemGroup>
 

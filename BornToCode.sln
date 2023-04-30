@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BornToCodeWebApp", "BornToC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityModels.Postgresql", "EntityModels.Postgresql\EntityModels.Postgresql.csproj", "{9FEE9EB4-B788-407D-A377-3857460001F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext.Postgresql", "DataContext.Postgresql\DataContext.Postgresql.csproj", "{D5E989EA-48C5-4217-A472-184992122AE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext", "DataContext\DataContext.csproj", "{D5E989EA-48C5-4217-A472-184992122AE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
