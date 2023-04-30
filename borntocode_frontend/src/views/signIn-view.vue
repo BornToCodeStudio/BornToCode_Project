@@ -1,10 +1,12 @@
 <template>
-    <div class="log__in">
+    <div class="Main__text">
         <h1>Вход</h1>
-        <input type="text" ref="login" placeholder="Логин">
-        <input type="password" ref="password" placeholder="Пароль">
-        <button type="submit" @click="signIn()">Войти</button>
-        <p><a href ="">Нету аккаунта? Зарегистрируйтесь</a></p>
+    </div>
+    <div class="log__in">
+        <input class="Login" type="text" ref="login" placeholder="Логин">
+        <input class="Password" type="password" ref="password" placeholder="Пароль">
+        <button class="Submit" type="submit" @click="signIn()">Войти</button>
+        <p><a class="href" href ="">Нету аккаунта? Зарегистрируйтесь</a></p>
     </div>
 </template>
 
@@ -44,3 +46,50 @@ export default{
     }
 }
 </script>
+
+<style lang="scss" scoped>
+
+.log__in{
+    display: flex;
+    justify-content:left;
+    gap: 2px;
+}
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 2px solid black;
+    height: 20px;
+    text-align: center;
+}
+
+.Password{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 2px solid black;
+    height: 20px;
+    text-align: center;
+}
+
+.Submit{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: none;
+    border-bottom: 10px;
+    width: 60px;
+    height: 28px;
+    padding: 4px;
+}
+
+.href{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -12px;
+}
+
+
+</style>

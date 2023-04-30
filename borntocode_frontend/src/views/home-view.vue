@@ -113,8 +113,8 @@ export default {
       gap: 10px;
 
       #search__bar {
-        width: 70%;
-        height: 45px;
+        width: 60%;
+        height: 44px;
         border-radius: 15px;
         border-width: 1px;
         border-color: #7AA7E2;
@@ -128,6 +128,10 @@ export default {
         border-radius: 20px;
         border-width: 0px;
         background-color: #9EB4EE;
+      }
+
+      #create__task:hover{
+        background-color: #567ff0;
       }
     }
 
@@ -165,14 +169,24 @@ export default {
             border-radius: 15px;
             width: 27%;
           }
+
+          #filter__new:hover, #filter__solutions:hover, #filter__likes:hover{
+            background-color:#567ff0;
+          }
         }
 
         #tasks {
+          display: flex;
+          justify-content: center;
           text-align: center;
           background-color: #9AA5AC;
           color: white;
           border-radius: 15px;
-          width:10%;        } 
+          width:10%;
+          padding-top: 5px;
+        } 
+
+        
 
         .right__filters {
           display:flex;
@@ -188,9 +202,11 @@ export default {
             border-radius: 15px;
             width: 27%;
           }
+          #filter__html:hover , #filter__css:hover, #filter__js:hover{
+            background-color: #567ff0;
+          }
         }
       }
     }
   }
-    
 </style>

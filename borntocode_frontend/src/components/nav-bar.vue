@@ -79,6 +79,7 @@ export default {
         border-width: 0px;
         width: 70px;
         background-color: #A0C6F8;
+        text-align: center;
     }
 
     #sign-in__button {
@@ -86,6 +87,11 @@ export default {
         border-width: 0px;
         width: 70px;
         background-color: #A0C6F8;
+        text-align: center;
+    }
+
+    #sign-up__button:hover, #sign-in__button:hover, #notifications__button:hover{
+      background-color: #567ff0;
     }
 
     #profile__button {
@@ -100,6 +106,6 @@ export default {
         border-width: 0px;
         height: 50px;
         width: 30px;
-        background-color: #99B0ED;
+        background-color: #A0C6F8;
     }
 </style>
