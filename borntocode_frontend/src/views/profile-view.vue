@@ -1,9 +1,15 @@
 <template>
 <body>
-    <main>    
+    <main>
         <div class="profile__column">
             <div class="profile__info">
-                <img :src="avatarUrl" ref='profileImg' alt="unload" class="profile__image">
+                <div class="image-upload">
+                    <label for="file-input">
+                        <img :src="avatarUrl" ref='profileImg' alt="unload" class="profile__image">
+                    </label>
+
+                    <input id="file-input" type="file" ref="file" @change="selectFile()"/>
+                </div>
 
                 <span id="profile__nickname">{{ nickname }}</span>
                 <span id="profile__aboutme">About me:</span>
@@ -12,8 +18,7 @@
 
                 <button id="subscribe__button">Subscribe</button>
 
-                <input type="file" ref="file" @change="selectFile()">
-                <button class="Send__photo" @click="sendFile()">Отправить фото</button>
+                <button class="send__photo" @click="sendFile()">Отправить фото</button>
             </div>
             <div id="profile__stats">
                 <StatsItem text="Likes" :value="likes"/>
@@ -106,7 +111,7 @@ export default{
             if (size > 3) {
                 alert("Максимальный размер аватарки не более 3 МБ");
                 
-                this.$refs.file.value = null;                
+                this.$refs.file.value = null;
 
                 return;
             }
@@ -302,6 +307,10 @@ export default{
         height: 100px;
         border-radius: 50px;
         transition: 1s;
+    }
+
+    .image-upload>input {
+        display: none;
     }
 
     .profile__image:hover {

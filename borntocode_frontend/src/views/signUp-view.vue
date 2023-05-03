@@ -5,12 +5,12 @@
             <title>Вход</title>
         </head>
         <div>
-            <h1>Регистрация</h1>
-            <div class="Block__registration">
-                <input class="Login" type="text" ref="login" placeholder="Логин">
-                <input class="Password" type="password" ref="password" placeholder="Пароль">
-                <input class="Confirmpassword" type="password" ref="confirmPassword" placeholder="Подтверждение пароля">
-                <button class="Signup" @click="signUp()">Зарегистрироваться</button>
+            <h1 class="registr__text">Регистрация</h1>
+            <div class="block__registration">
+                <input class="login" type="text" ref="login" placeholder="Логин">
+                <input class="password" type="password" ref="password" placeholder="Пароль">
+                <input class="confirmpassword" type="password" ref="confirmPassword" placeholder="Подтверждение пароля">
+                <button class="signup" @click="signUp()">Зарегистрироваться</button>
             </div>
         </div> 
     </div>
@@ -61,22 +61,33 @@ export default{
 
 <style lang="scss" scoped>
 
-.Block__registration{
+.registr__text {
     display: flex;
-    justify-content:left;
-    gap: 2px;
+    justify-content: center;
+    font-size: 40px;
+    
 }
 
-.Login, .Password, .Confirmpassword{
+.block__registration{
+    position: relative;
+    flex-wrap: wrap;
+    gap: 4px;
+    
+}
+
+.login, .password, .confirmpassword{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     border: 2px solid black;
     text-align: center;
     height: 20px;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 2px;
 }
 
-.Signup{
+.signup{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -86,6 +97,8 @@ export default{
     text-align: center;
     padding-top: 3px;
     transition: 0.5s;
+    margin: auto;
+    margin-top: 4px;
 }
 
 </style>

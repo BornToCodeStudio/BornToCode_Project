@@ -1,12 +1,10 @@
 <template>
-    <div class="Main__text">
-        <h1>Вход</h1>
-    </div>
+    <div class="main__text">Вход</div>
+    <a class="href" href ="">Нету аккаунта? Зарегистрируйтесь</a>
     <div class="log__in">
-        <input class="Login" type="text" ref="login" placeholder="Логин">
-        <input class="Password" type="password" ref="password" placeholder="Пароль">
-        <button class="Submit" type="submit" @click="signIn()">Войти</button>
-        <p><a class="href" href ="">Нету аккаунта? Зарегистрируйтесь</a></p>
+        <input class="login" type="text" ref="login" placeholder="Логин">
+        <input class="password" type="password" ref="password" placeholder="Пароль">
+        <button class="submit" type="submit" @click="signIn()">Войти</button>
     </div>
 </template>
 
@@ -49,22 +47,39 @@ export default{
 
 <style lang="scss" scoped>
 
-.log__in{
+.main__text{
     display: flex;
-    justify-content:left;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.href{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: -12px;
+    font-size: 18px;
+}
+
+.log__in{
+    display: row;
+    position: relative;
+    flex-wrap: wrap;
     gap: 2px;
 }
 
-.Login, .Password{
+.login, .password{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
     border: 2px solid black;
     height: 20px;
     text-align: center;
+    margin: auto;
+    margin-top: 4px;
 }
 
-.Submit{
+.submit{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -74,14 +89,11 @@ export default{
     height: 28px;
     padding: 4px;
     transition: 0.5s;
+    margin: auto;
+    margin-top: 4px;
 }
 
-.href{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: -12px;
-}
+
 
 
 </style>
